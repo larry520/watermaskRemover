@@ -61,7 +61,7 @@ jobs:
         # 使用 PyInstaller 打包
         pyinstaller --name="WatermarkRemover" \
           --windowed \
-          --icon=icon.icns \
+          #--icon=icon.icns \
           --add-data="web:web" \
           --add-data="src:src" \
           #--add-data="api:api" \
@@ -73,7 +73,7 @@ jobs:
           --collect-all easyocr \
           --collect-all iopaint \
           --noconfirm \
-          run_app.py
+          run_macos.py
     
     - name: Create DMG installer
       run: |

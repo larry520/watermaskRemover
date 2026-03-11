@@ -6,6 +6,10 @@ on:
       - 'v*'  # 当推送 v1.0.0 这样的标签时触发
   workflow_dispatch:  # 允许手动触发
 
+# 设置环境变量，提前使用 Node.js 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  
 jobs:
   build-macos:
     runs-on: macos-14  # macOS ARM runner (M1/M2/M3/M4 兼容)

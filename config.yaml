@@ -51,7 +51,7 @@ inpaint:
   # 修复模型选择: lama, mat, ldm, fcf, manga, cv2
   model: "lama"
   # 设备: cuda, cpu, mps
-  device: "cpu"
+  device: "mps"
   # HD 策略: Original, Resize, Crop
   hd_strategy: "Original"
 #  # HD 策略调整大小限制

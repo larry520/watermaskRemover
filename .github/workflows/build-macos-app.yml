@@ -60,11 +60,12 @@ jobs:
           --icon=icon.icns \
           --add-data="web:web" \
           --add-data="src:src" \
-          --add-data="api:api" \
+          #--add-data="api:api" \
           --hidden-import=easyocr \
           --hidden-import=iopaint \
           --hidden-import=fastapi \
           --hidden-import=uvicorn \
+          --hidden-import=moviepy \
           --collect-all easyocr \
           --collect-all iopaint \
           --noconfirm \

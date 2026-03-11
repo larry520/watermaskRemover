@@ -59,12 +59,13 @@ jobs:
         EOF
         
         # 使用 PyInstaller 打包
+        #--icon=icon.icns \
+        #--add-data="api:api" \
         pyinstaller --name="WatermarkRemover" \
           --windowed \
-          #--icon=icon.icns \
           --add-data="web:web" \
           --add-data="src:src" \
-          #--add-data="api:api" \
+          --add-data="utils:utils" \
           --hidden-import=easyocr \
           --hidden-import=iopaint \
           --hidden-import=fastapi \

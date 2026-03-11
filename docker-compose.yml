@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  watermark-remover:
+    build: .
+    container_name: watermark-remover
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./outputs:/app/outputs
+      - ./config:/app/config
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    
+  # 可选：添加 Redis 用于任务队列
+  redis:
+    image: redis:7-alpine
+    container_name: watermark-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

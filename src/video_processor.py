@@ -9,7 +9,7 @@ from loguru import logger
 from tqdm import tqdm
 import tempfile
 import shutil
-from moviepy import VideoFileClip, AudioFileClip
+
 
 try:
     from moviepy import VideoFileClip, AudioFileClip
@@ -97,7 +97,7 @@ class VideoProcessor:
         
         # 设置编码器
         codec, bitrate = self._get_codec_settings(quality)
-        fourcc = cv2.VideoWriter_fourcc(*codec)
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         out = cv2.VideoWriter(
             str(temp_video_path),
             fourcc,
@@ -222,7 +222,7 @@ class VideoProcessor:
         # 设置编码器
         quality = kwargs.get('quality', 'high')
         codec, bitrate = self._get_codec_settings(quality)
-        fourcc = cv2.VideoWriter_fourcc(*codec)
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         
         temp_video = tempfile.NamedTemporaryFile(suffix='.mp4', delete=False)
         temp_video_path = Path(temp_video.name)
